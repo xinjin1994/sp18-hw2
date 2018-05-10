@@ -48,7 +48,7 @@ public class GlobeSortClient {
         long pingEndTime = System.currentTimeMillis();
 
         long pingTotalTime = pingEndTime - pingStartTime;
-        system.out.println("The round trip latency is: " + pingTotalTime);
+        System.out.println("The round trip latency is: " + pingTotalTime);
         System.out.println("Ping successful.");
 
         System.out.println("Requesting server to sort array");
