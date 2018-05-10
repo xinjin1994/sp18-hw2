@@ -51,12 +51,12 @@ public class GlobeSortClient {
 
         System.out.println("Requesting server to sort array");
         long sortStartTime = System.currentTimeMillis();
-        LongArray request = LongArray.newBuilder().addAllValues(Arrays.asList(values)).build();
-        LongArray response = serverStub.sortIntegers(request);
-        long serverSortTime = response[response.length - 1];
+        IntArray request = IntArray.newBuilder().addAllValues(Arrays.asList(values)).build();
+        IntArray response = serverStub.sortIntegers(request);
+        int serverSortTime = response[response.length - 1];
         long sortEndTime = System.currentTimeMillis();
         long sortTotalTime = sortEndTime - sortStartTime;
-        System.out.println("The one-way network throughput is: " + ((sortTotalTime - serverSortTime)/2) + " ms.");
+        System.out.println("The one-way network throughput is: " + ((sortTotalTime/1000 - serverSortTime)/2) + " s.");
         System.out.println("The application throughput is: " + sortTotalTime + " ms.");
         System.out.println("Sorted array");
 
