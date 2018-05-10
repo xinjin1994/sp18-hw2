@@ -48,12 +48,16 @@ public class GlobeSortClient {
         long pingEndTime = System.currentTimeMillis();
 
         long pingTotalTime = pingEndTime - pingStartTime;
-        System.out.println("The round trip latency is: " + pingTotalTime);
+        System.out.println("The round trip latency is: " + pingTotalTime + " ms.");
         System.out.println("Ping successful.");
 
         System.out.println("Requesting server to sort array");
+        long sortStartTime = System.currentTimeMillis();
         IntArray request = IntArray.newBuilder().addAllValues(Arrays.asList(values)).build();
         IntArray response = serverStub.sortIntegers(request);
+        long sortEndTime = System.currentTimeMillis();
+        long sortTotalTime = sortEndTime - sortStartTime;
+        System.out.println("The application throughput is: " + sortTotalTime + " ms.");
         System.out.println("Sorted array");
     }
 
