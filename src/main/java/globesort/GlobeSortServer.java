@@ -96,7 +96,8 @@ public class GlobeSortServer {
             }
             long serverSortEndTime = System.currentTimeMillis();
             long serverSortTotalTime = serverSortEndTime - serverSortStartTime;
-            responseBuilder.addValues((serverSortTotalTime/1000).intValue());
+//            responseBuilder.addValues((serverSortTotalTime/1000).intValue());
+            System.out.println("The serverSortTotalTime is: " + serverSortTotalTime + " ms.");
             IntArray response = responseBuilder.build();
             responseObserver.onNext(response);
             responseObserver.onCompleted();
