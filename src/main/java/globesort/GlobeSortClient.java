@@ -41,11 +41,11 @@ public class GlobeSortClient {
 
     public void run(Integer[] values) throws Exception {
         System.out.println("Pinging " + serverStr + "...");
-        long pingStartTime = System.currentTimeMills();
+        long pingStartTime = System.currentTimeMillis();
 
         serverStub.ping(Empty.newBuilder().build());
 
-        long pingEndTime   = System.currentTimeMills();
+        long pingEndTime = System.currentTimeMillis();
 
         long pingTotalTime = pingEndTime - pingStartTime;
         system.out.println("The round trip latency is: " + pingTotalTime);
